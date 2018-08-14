@@ -4,8 +4,8 @@ import (
 	"context"
 )
 
-// Protocol interface
-type Protocol interface {
+// ConnectionProtocol interface
+type ConnectionProtocol interface {
 	Initialize(ctx context.Context) error
 	SupportedCommands() ([]Command, error)
 
