@@ -1,11 +1,12 @@
 package main
 
-import(
+import (
+	"fmt"
+
 	"github.com/jormenjanssen/connectivity-manager/wireless"
 )
 
 func main() {
-	var info := &Info{
-		
-	}
+	var info = wireless.GetInfo()
+	fmt.Printf(info.Bssid)
 }
