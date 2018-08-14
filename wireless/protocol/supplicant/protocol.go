@@ -22,6 +22,6 @@ func (p *Protocol) SupportedCommands() ([]protocol.Command, error) {
 }
 
 // Execute a command on the protocol
-func (p *Protocol) Execute(command protocol.Command) {
-
+func (p Protocol) Execute(command protocol.Command) error {
+	return nil
 }

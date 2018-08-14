@@ -9,5 +9,5 @@ type ConnectionProtocol interface {
 	Initialize(ctx context.Context) error
 	SupportedCommands() ([]Command, error)
 
-	Execute(command Command)
+	Execute(command Command) error
 }
