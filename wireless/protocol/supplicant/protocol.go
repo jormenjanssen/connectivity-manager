@@ -25,6 +25,7 @@ func (p Protocol) initializeBackground(ctx context.Context) {
 		select {
 		case <-ctx.Done():
 			fmt.Printf("Stopping")
+			break
 		default:
 			{
 				time.Sleep(1 * time.Second)
