@@ -1,0 +1,26 @@
+{
+    "endpoint": "localhost:59748",
+    "devices": {
+        "wireless": {
+            "device": "rs9113",
+            "protocols": {
+                "supplicant": "/var/run/wpa_supplicant/wifi0",
+                "procfs": "/proc/net/wireless"
+            },
+            "actions": {
+                "detect": "stat /sys/class/net/wifi0",
+                "restart": "/bin/sh restart-wireless.sh"
+            }
+        },
+        "broadband": {
+            "device": "Simcom modem",
+            "protocols": {
+                "at": "/dev/ttyUSB2"
+            },
+            "actions": {
+                "detect": "stat /sys/class/net/wifi0",
+                "restart": "/bin/sh restart-modem.sh"
+            }
+        } 
+    }
+}

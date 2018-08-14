@@ -1,0 +1,14 @@
+{
+    "endpoint": "localhost:3322",
+    "keys": {
+        "system.configuration.*": {
+            "read": "http://localhost:3332/api/parameters"
+        },
+        "system.security.can0.unlock": {
+            "read": "/bin/sh echo 1 > /var/run/bus0.unlock",
+            "write": "/bin/sh echo 1 > /var/run/bus0.unlock"
+        }
+        
+    }
+    
+}
