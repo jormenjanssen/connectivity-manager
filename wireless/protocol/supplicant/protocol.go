@@ -22,10 +22,11 @@ func (p Protocol) Initialize(ctx context.Context) error {
 func (p Protocol) initializeBackground(ctx context.Context) {
 
 	for {
+
 		select {
 		case <-ctx.Done():
 			fmt.Printf("Stopping")
-			break
+			return
 		default:
 			{
 				time.Sleep(1 * time.Second)
