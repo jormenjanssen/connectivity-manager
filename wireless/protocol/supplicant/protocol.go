@@ -3,6 +3,7 @@ package supplicant
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/jormenjanssen/connectivity-manager/protocol"
 )
@@ -14,7 +15,21 @@ type Protocol struct {
 // Initialize the supplicant protocol
 func (p Protocol) Initialize(ctx context.Context) error {
 	fmt.Printf("Initializing supplicant protocol")
+	p.initializeBackground(ctx)
 	return nil
+}
+
+func (p Protocol) initializeBackground(ctx context.Context) {
+
+	select {
+	case <-ctx.Done():
+		fmt.Printf("Stopping")
+	default:
+		{
+			time.Sleep(1 * time.Second)
+			fmt.Println("Running supplicant protocol connection")
+		}
+	}
 }
 
 // SupportedCommands gets a list of supported commands
