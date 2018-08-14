@@ -1,12 +1,14 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/jormenjanssen/connectivity-manager/wireless"
+	"github.com/jormenjanssen/connectivity-manager/protocol"
 )
 
 func main() {
-	var info = wireless.GetInfo()
-	fmt.Printf(info.Bssid)
+
+}
+
+// GetProtocol return a protocol from a protocol name
+func GetProtocol(name string) protocol.Protocol {
+	return
 }
