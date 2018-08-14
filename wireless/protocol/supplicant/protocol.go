@@ -15,7 +15,7 @@ type Protocol struct {
 // Initialize the supplicant protocol
 func (p Protocol) Initialize(ctx context.Context) error {
 	fmt.Printf("Initializing supplicant protocol")
-	p.initializeBackground(ctx)
+	go p.initializeBackground(ctx)
 	return nil
 }
 
