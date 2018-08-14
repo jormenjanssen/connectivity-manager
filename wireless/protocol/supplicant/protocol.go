@@ -2,6 +2,7 @@ package supplicant
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/jormenjanssen/connectivity-manager/protocol"
 )
@@ -12,6 +13,7 @@ type Protocol struct {
 
 // Initialize the supplicant protocol
 func (p Protocol) Initialize(ctx context.Context) error {
+	fmt.Printf("Initializing supplicant protocol")
 	return nil
 }
 

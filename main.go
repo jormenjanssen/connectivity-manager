@@ -1,15 +1,16 @@
 package main
 
 import (
-	"github.com/jormenjanssen/connectivity-manager/protocol"
-	"github.com/jormenjanssen/connectivity-manager/wireless/protocol/supplicant"
+	"context"
 )
 
 func main() {
+	ctx, cancel := context.WithCancel(context.Background())
+	pf := protocolFactory{}
 
-}
+	protocol := pf.GetProtocol("supplicant")
+	protocol.Initialize(ctx)
 
-// GetProtocol return a protocol from a protocol name
-func GetProtocol(name string) protocol.ConnectionProtocol {
-	return supplicant.Protocol{}
+	cancel()
+
 }
