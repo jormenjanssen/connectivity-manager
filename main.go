@@ -9,6 +9,6 @@ func main() {
 }
 
 // GetProtocol return a protocol from a protocol name
-func GetProtocol(name string) protocol.Protocol {
+func GetProtocol(name string) protocol.ConnectionProtocol {
 	return supplicant{}
 }
