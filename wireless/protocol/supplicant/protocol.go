@@ -21,13 +21,15 @@ func (p Protocol) Initialize(ctx context.Context) error {
 
 func (p Protocol) initializeBackground(ctx context.Context) {
 
-	select {
-	case <-ctx.Done():
-		fmt.Printf("Stopping")
-	default:
-		{
-			time.Sleep(1 * time.Second)
-			fmt.Println("Running supplicant protocol connection")
+	for {
+		select {
+		case <-ctx.Done():
+			fmt.Printf("Stopping")
+		default:
+			{
+				time.Sleep(1 * time.Second)
+				fmt.Println("Running supplicant protocol connection")
+			}
 		}
 	}
 }
